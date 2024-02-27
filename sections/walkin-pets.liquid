@@ -1,4 +1,4 @@
-<section id="{{section.settings.sectionId}}" class="walkin-pets" style="padding: {{ section.settings.paddingTop }}px 0px {{ section.settings.paddingBottom }}px 0px;">
+<section id="{{section.settings.sectionId}}" class="walkin-pets" style="padding: {{ section.settings.paddingTop }}px 70px {{ section.settings.paddingBottom }}px 70px;">
     <h1 class="walkin-pets__title">{{ section.settings.title }}</h1>
     <div class="walkin-pets__overviewSection">
         <p class="walkin-pets__overview">{{ section.settings.overview }}</p>
@@ -19,18 +19,20 @@
         {
             "type": "inline_richtext",
             "id": "title",
-            "label": "Title"
+            "label": "Title", 
+            "default": "This is a section title..."
         },
         {
             "type": "inline_richtext",
             "id": "overview",
-            "label": "Overview"
+            "label": "Overview",
+            "default": "Section overview. Lorem ipsum dolor sit amet. Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
             "type": "text",
             "id": "buttonTxt",
             "label": "Button text",
-            "default": "explore"
+            "default": "Explore all ranges"
         },
         {
             "type": "range",

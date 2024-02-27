@@ -43,9 +43,9 @@
       "type": "walkin-pets",
       "settings": {
         "sectionId": "",
-        "title": "",
-        "overview": "",
-        "buttonTxt": "explore",
+        "title": "This is a section title...",
+        "overview": "Section overview. Lorem ipsum <a href=\"#\" title=\"#\">dolor sit amet<\/a>. Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "buttonTxt": "Explore all ranges",
         "paddingTop": 25,
         "paddingBottom": 25
       }
