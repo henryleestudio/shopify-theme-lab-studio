@@ -12,6 +12,7 @@
   font-size: 12px;
   color: #A0A0A0;
   width: 41%;
+  margin: 0;
 }
 .walkin-pets__overview a {
   color: #7A7979;
@@ -21,8 +22,6 @@
   text-decoration: none;
   border: none;
   border-radius: 5px;
-  background: #111111;
-  color: white;
   padding: 5.25px 18px;
   height: 35px;
 }
@@ -30,14 +29,11 @@
   margin-left: 17px;
   margin-right: -8px;
 }
-.walkin-pets__button:hover {
-  background: #6662DC;
-}
 @media only screen and (max-width: 768px) {
   .walkin-pets__button {
     display: none;
   }
   .walkin-pets__overview {
-    width: 70%;
+    width: 900%;
   }
 }

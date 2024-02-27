@@ -42,12 +42,15 @@
     "walkin_pets_YdzjdV": {
       "type": "walkin-pets",
       "settings": {
-        "sectionId": "",
         "title": "This is a section title...",
         "title_size": 2,
         "heading_tag": 2,
         "overview": "Section overview. Lorem ipsum <a href=\"#\" title=\"#\">dolor sit amet<\/a>. Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "buttonTxt": "Explore all ranges",
+        "buttonText": "Explore all ranges",
+        "buttonLink": "https:\/\/www.google.com\/",
+        "buttonTextColor": "#ffffff",
+        "buttonColor": "#111111",
+        "buttonHoverColor": "#6662dc",
         "paddingTop": 25,
         "paddingBottom": 25
       }

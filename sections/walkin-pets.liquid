@@ -10,22 +10,27 @@
             <p class="walkin-pets__overview">{{ ss.overview }}</p>
         {% endif %}
 
-        {% if ss.buttonTxt != blank %}
-            <a class="walkin-pets__button" href="{{ ss.buttonLink }}">{{ ss.buttonTxt }}<i class="fa-solid fa-arrow-right walkin-pets__button-arrow"></i></a>
+        {% if ss.buttonText != blank %}
+            <a class="walkin-pets__button" href="{{ ss.buttonLink }}">{{ ss.buttonText }}<i class="fa-solid fa-arrow-right walkin-pets__button-arrow"></i></a>
         {% endif %}
     </div>
 </section>
+
+{% style %}
+    .walkin-pets__button {
+        background: {{ ss.buttonColor }};
+        color: {{ ss.buttonTextColor }};
+    }
+    .walkin-pets__button:hover {
+        background: {{ ss.buttonHoverColor }} !important;
+    }
+{% endstyle %}
 
 
 {% schema %}
 {
     "name": "Walkin' Pets",
     "settings": [
-        {
-            "type": "text",
-            "id": "sectionId",
-            "label": "Section ID"
-        },
         {
             "type": "inline_richtext",
             "id": "title",
@@ -60,15 +65,32 @@
         },
         {
             "type": "text",
-            "id": "buttonTxt",
+            "id": "buttonText",
             "label": "Button text",
             "default": "Explore all ranges"
         },
         {
-            "type": "text",
+            "type": "url",
             "id": "buttonLink",
-            "label": "Button link",
-            "default": "#"
+            "label": "Button link"
+        },
+        {
+            "type": "color",
+            "id": "buttonTextColor",
+            "label": "Button Text color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "color",
+            "id": "buttonColor",
+            "label": "Button color",
+            "default": "#111111"
+        },
+        {
+            "type": "color",
+            "id": "buttonHoverColor",
+            "label": "Button hover color",
+            "default": "#6662DC"
         },
         {
             "type": "range",
