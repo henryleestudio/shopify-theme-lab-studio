@@ -5,8 +5,8 @@ $buttonTxtSize: 12.5px;
 .walkin-pets {
     &__title {
         font-size: $titleSize;
-        // font-weight: bold;
-        color: #333333;
+        color: #333333!important;
+        margin: 0px;
     }
     &__overviewSection {
         display: flex;
@@ -17,14 +17,18 @@ $buttonTxtSize: 12.5px;
         font-size: $paragraphSize;
         color: #A0A0A0;
         width: 41%;
+        a {
+            color: #7A7979;
+        }
     }
     &__button {
         font-size: $buttonTxtSize;
+        text-decoration: none;
         border: none;
         border-radius: 5px;
         background: #111111;
         color: white;
-        padding: 0px 18px;
+        padding: 5.25px 18px;
         height: 35px;
     }
     &__button-arrow {
@@ -34,7 +38,12 @@ $buttonTxtSize: 12.5px;
     &__button:hover {
         background: #6662DC;
     }
-    a {
-        color: #7A7979;
+    @media only screen and (max-width: 768px) {
+        &__button {
+            display: none;
+        }
+        &__overview {
+            width: 70%;
+        }
     }
 }
