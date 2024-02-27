@@ -1,0 +1,64 @@
+<section id="{{section.settings.sectionId}}" class="walkin-pets" style="padding: {{ section.settings.paddingTop }}px 70px {{ section.settings.paddingBottom }}px 70px;">
+    <h1 class="walkin-pets__title">{{ section.settings.title }}</h1>
+    <div class="walkin-pets__overviewSection">
+        <p class="walkin-pets__overview">{{ section.settings.overview }}</p>
+        <button class="walkin-pets__button">{{ section.settings.buttonTxt }}<i class="fa-solid fa-arrow-right walkin-pets__button-arrow"></i></button>
+    </div>
+</section>
+
+
+{% schema %}
+{
+    "name": "Walkin' Pets",
+    "settings": [
+        {
+            "type": "text",
+            "id": "sectionId",
+            "label": "Section ID"
+        },
+        {
+            "type": "inline_richtext",
+            "id": "title",
+            "label": "Title", 
+            "default": "This is a section title..."
+        },
+        {
+            "type": "inline_richtext",
+            "id": "overview",
+            "label": "Overview",
+            "default": "Section overview. Lorem ipsum dolor sit amet. Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        },
+        {
+            "type": "text",
+            "id": "buttonTxt",
+            "label": "Button text",
+            "default": "Explore all ranges"
+        },
+        {
+            "type": "range",
+            "id": "paddingTop",
+            "min": 0,
+            "max": 50,
+            "step": 5,
+            "label": "Padding Top",
+            "default": 25
+        }, 
+        {
+            "type": "range",
+            "id": "paddingBottom",
+            "min": 0,
+            "max": 50,
+            "step": 5,
+            "label": "Padding Bottom",
+            "default": 25
+        }
+        ],
+    "presets": [
+        {
+            "name": "Walkin' Pets"
+        }
+    ], 
+    "tag": "section",
+    "class": "walkin-pets-section"
+}
+{% endschema %}
