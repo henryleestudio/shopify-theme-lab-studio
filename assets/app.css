@@ -1,6 +1,7 @@
 .walkin-pets__title {
   font-size: 26px;
-  color: #333333;
+  color: #333333 !important;
+  margin: 0px;
 }
 .walkin-pets__overviewSection {
   display: flex;
@@ -12,22 +13,33 @@
   color: #A0A0A0;
   width: 41%;
 }
+.walkin-pets__overview a {
+  color: #7A7979;
+}
 .walkin-pets__button {
   font-size: 12.5px;
+  text-decoration: none;
   border: none;
   border-radius: 5px;
-  background: #111111;
-  color: white;
-  padding: 0px 18px;
+  padding: 5.25px 18px;
   height: 35px;
 }
 .walkin-pets__button-arrow {
   margin-left: 17px;
   margin-right: -8px;
 }
-.walkin-pets__button:hover {
-  background: #6662DC;
+.walkin-pets__button.mobile {
+  display: none;
 }
-.walkin-pets a {
-  color: #7A7979;
+@media only screen and (max-width: 768px) {
+  .walkin-pets__button {
+    display: none;
+  }
+  .walkin-pets__overview {
+    width: 900%;
+  }
+  .walkin-pets__button.mobile {
+    text-align: center;
+    display: block;
+  }
 }

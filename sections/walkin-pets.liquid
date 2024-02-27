@@ -1,10 +1,32 @@
-<section id="{{section.settings.sectionId}}" class="walkin-pets" style="padding: {{ section.settings.paddingTop }}px 70px {{ section.settings.paddingBottom }}px 70px;">
-    <h1 class="walkin-pets__title">{{ section.settings.title }}</h1>
+{% assign ss = section.settings %}
+
+<section id="{{ss.sectionId}}" class="walkin-pets" style="padding: {{ ss.paddingTop }}px 3% {{ ss.paddingBottom }}px 3%;">
+    {% if ss.title != blank %}     
+        <h{{ ss.heading_tag }} class="walkin-pets__title h{{ ss.title_size }}">{{- ss.title | newline_to_br -}}</h{{ ss.heading_tag }}>
+    {% endif %}
+
     <div class="walkin-pets__overviewSection">
-        <p class="walkin-pets__overview">{{ section.settings.overview }}</p>
-        <button class="walkin-pets__button">{{ section.settings.buttonTxt }}<i class="fa-solid fa-arrow-right walkin-pets__button-arrow"></i></button>
+        {% if ss.overview != blank %}
+            <p class="walkin-pets__overview">{{ ss.overview }}</p>
+        {% endif %}
+
+        {% if ss.buttonText != blank %}
+            <a class="walkin-pets__button" href="{{ ss.buttonLink }}">{{ ss.buttonText }}<i class="fa-solid fa-arrow-right walkin-pets__button-arrow"></i></a>
+        {% endif %}
     </div>
+
+    <a class="walkin-pets__button mobile" href="{{ ss.buttonLink }}">{{ ss.buttonText }}<i class="fa-solid fa-arrow-right walkin-pets__button-arrow"></i></a>
 </section>
+
+{% style %}
+    .walkin-pets__button {
+        background: {{ ss.buttonColor }};
+        color: {{ ss.buttonTextColor }};
+    }
+    .walkin-pets__button:hover {
+        background: {{ ss.buttonHoverColor }} !important;
+    }
+{% endstyle %}
 
 
 {% schema %}
@@ -12,15 +34,30 @@
     "name": "Walkin' Pets",
     "settings": [
         {
-            "type": "text",
-            "id": "sectionId",
-            "label": "Section ID"
-        },
-        {
             "type": "inline_richtext",
             "id": "title",
             "label": "Title", 
             "default": "This is a section title..."
+        },
+        {
+            "type": "range",
+            "id": "title_size",
+            "min": 1,
+            "max": 6,
+            "step": 1,
+            "label": "Title heading size",
+            "info": "Title size, refers to the hierarchy and visual importance of headings on a webpage, emphasizing the primary topic.",
+            "default": 6
+        },
+        {
+            "type": "range",
+            "id": "heading_tag",
+            "min": 1,
+            "max": 6,
+            "step": 1,
+            "label": "Title heading tag",
+            "info": "Header tags, also known as heading tags, are used to seperate headings and subheadings on a webpage. They rank in order of importance, from H1 to H6, with H1s usually being the title. Header tags improve the readability and SEO of a webpage.",
+            "default": 6
         },
         {
             "type": "inline_richtext",
@@ -30,9 +67,32 @@
         },
         {
             "type": "text",
-            "id": "buttonTxt",
+            "id": "buttonText",
             "label": "Button text",
             "default": "Explore all ranges"
+        },
+        {
+            "type": "url",
+            "id": "buttonLink",
+            "label": "Button link"
+        },
+        {
+            "type": "color",
+            "id": "buttonTextColor",
+            "label": "Button Text color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "color",
+            "id": "buttonColor",
+            "label": "Button color",
+            "default": "#111111"
+        },
+        {
+            "type": "color",
+            "id": "buttonHoverColor",
+            "label": "Button hover color",
+            "default": "#6662DC"
         },
         {
             "type": "range",
