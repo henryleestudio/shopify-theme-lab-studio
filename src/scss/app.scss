@@ -1,3 +1,42 @@
-.header {
-    background-color: blue !important;
+$titleSize: 26px;
+$paragraphSize: 12px;
+$buttonTxtSize: 12.5px;
+
+.walkin-pets {
+    padding: 0px 70px;
+
+    &__title {
+        font-size: $titleSize;
+        // font-weight: bold;
+        color: #333333;
+    }
+    &__overviewSection {
+        display: flex;
+        justify-content: space-between;
+        margin: 0px;
+    }
+    &__overview {
+        font-size: $paragraphSize;
+        color: #A0A0A0;
+        width: 41%;
+    }
+    &__button {
+        font-size: $buttonTxtSize;
+        border: none;
+        border-radius: 5px;
+        background: #111111;
+        color: white;
+        padding: 0px 18px;
+        height: 35px;
+    }
+    &__button-arrow {
+        margin-left: 17px;
+        margin-right: -8px;
+    }
+    &__button:hover {
+        background: #6662DC;
+    }
+    a {
+        color: #7A7979;
+    }
 }
