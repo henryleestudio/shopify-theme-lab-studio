@@ -57,6 +57,12 @@
     box-sizing: border-box;
     position: relative;
 
+    &__slide {
+        width: 50px;
+    }
+    img {
+        width: 200px;
+    }
     &__track {
         width: 100%;
         overflow: hidden;
@@ -83,18 +89,29 @@
         border: none;
         border-radius: 50%;
         box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.1);
-        // text-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
+        text-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
         cursor: pointer;
         transition: opacity 150ms ease, border 300ms ease-in-out;
         transform: translateY(-50%);
         line-height: 1;
     }
-    &__arrow-right {
-        right: 2em;
+    &__arrow--right {
+        position: relative;
+        right: -1em;
         opacity: 1;
     }
+    &__arrow--right:hover {
+        background-color: black !important;
+        color: white;
+    }
     &__arrow--left {
-        left: 2em;
+        position: relative;
+        left: -1em;
         opacity: .3;
+    }
+    @media only screen and (max-width: 768px) {
+        &__arrows {
+            display: none;
+        }
     }
 }

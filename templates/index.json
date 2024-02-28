@@ -51,6 +51,14 @@
         "buttonTextColor": "#ffffff",
         "buttonColor": "#111111",
         "buttonHoverColor": "#6662dc",
+        "collectionList": [
+          "the-james-bond-007-collection",
+          "the-queen-collection-1"
+        ],
+        "productList": [
+          "the-chef",
+          "the-shaken"
+        ],
         "paddingTop": 25,
         "paddingBottom": 25
       }
