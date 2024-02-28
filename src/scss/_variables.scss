@@ -1,0 +1,10 @@
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+// @import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
+$titleSize: 26px;
+$paragraphSize: 12px;
+$buttonTxtSize: 12.5px;
+
+$glide-class: 'glide' !default;
+$glide-element-separator: '__' !default;
+$glide-modifier-separator: '--' !default;
