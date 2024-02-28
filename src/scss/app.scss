@@ -63,7 +63,6 @@
     &__slide-image {
         width: 100%;
         border-radius: 10px;
-        float: left;
     }
     &__slide-button {
         font-size: $buttonTxtSize;
@@ -76,8 +75,7 @@
         padding: 5.25px 18px;
         width: 87%;
         height: 36px;
-        float: left;
-        margin-top: -50px;
+        margin-top: -65px;
         display: none;
     }
     &__image-container {
@@ -92,8 +90,10 @@
         .glide__slide-image {
             opacity: .5;
         }
+        .glide__varient-color {
+            top: -100px;
+        }
     }
-    
     &__product-header, &__collection-header {
         display: flex;
         width: 97%;
@@ -159,7 +159,7 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        top: 50%;
+        top: 37%;
     }
     &__arrow {
         font-size: 22px;
