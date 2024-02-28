@@ -75,11 +75,11 @@
 }
 .walkin-pets__overview {
   font-size: 12px;
-  color: #A0A0A0;
+  color: #7A7979;
   width: 41%;
 }
 .walkin-pets__overview a {
-  color: #7A7979;
+  color: #111111;
 }
 .walkin-pets__button {
   font-size: 12.5px;
@@ -118,8 +118,56 @@
 .glide__slide {
   width: 50px;
 }
-.glide img {
-  width: 200px;
+.glide__slide a {
+  text-decoration: none;
+}
+.glide__slide-image {
+  width: 97%;
+  border-radius: 10px;
+}
+.glide__title {
+  color: #111111;
+}
+.glide__price {
+  color: #111111;
+}
+.glide__collection-link {
+  color: #111111;
+  text-decoration: underline !important;
+}
+.glide__product-description {
+  color: #7A7979;
+  font-size: 12px;
+}
+.glide__variant-container {
+  position: absolute;
+  display: flex;
+  gap: 3px;
+}
+.glide__varient-color {
+  color: white;
+  width: 19px;
+  height: 19px;
+  border-radius: 3px;
+  position: relative;
+  list-style: none;
+  top: -44px;
+  left: -23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.glide__varient-1 {
+  background: #BABABA;
+}
+.glide__varient-2 {
+  background: #C57573;
+}
+.glide__varient-3 {
+  background: #7694B7;
+}
+.glide__varient-4 {
+  background: #9BB65A;
 }
 .glide__track {
   width: 100%;

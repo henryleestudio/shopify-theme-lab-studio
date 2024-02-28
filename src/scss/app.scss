@@ -1,5 +1,11 @@
 @import "variables";
 
+$primary-color-1: #111111;
+$primary-color-2: #7A7979;
+$primary-contrasting: #6662DC;
+$secondary-color-1: #B15552;
+$secondary-color-2: #ffffff;
+
 .walkin-pets {
     &__title {
         font-size: $titleSize;
@@ -13,10 +19,10 @@
     }
     &__overview {
         font-size: $paragraphSize;
-        color: #A0A0A0;
+        color: $primary-color-2;
         width: 41%;
         a {
-            color: #7A7979;
+            color: $primary-color-1;
         }
     }
     &__button {
@@ -51,17 +57,73 @@
     }
 }
 
+$titleSize: 26px;
+$paragraphSize: 12px;
+$buttonTxtSize: 12.5px;
+
 .glide {
     position: relative;
     width: 100%;
     box-sizing: border-box;
     position: relative;
 
+    &__slides {
+        // justify-content: space-evenly;
+        // gap: 10px;
+    }
     &__slide {
         width: 50px;
+        a {
+            text-decoration: none;
+        }
     }
-    img {
-        width: 200px;
+    &__slide-image {
+        width: 97%;
+        border-radius: 10px;
+    }
+    &__title {
+        color: $primary-color-1;
+    }
+    &__price {
+        color: $primary-color-1;
+    }
+    &__collection-link {
+        color: $primary-color-1;
+        text-decoration: underline !important;
+    }
+    &__product-description {
+        color: $primary-color-2;
+        font-size: $paragraphSize;
+    }
+    &__variant-container {
+        position: absolute;
+        display: flex;
+        gap: 3px;
+    }
+    &__varient-color {
+        color: white;
+        width: 19px;
+        height: 19px;
+        border-radius: 3px;
+        position: relative;
+        list-style: none;
+        top: -44px;
+        left: -23px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__varient-1 {
+        background: #BABABA;
+    }
+    &__varient-2 {
+        background: #C57573;
+    }
+    &__varient-3 {
+        background: #7694B7;
+    }
+    &__varient-4 {
+        background: #9BB65A;
     }
     &__track {
         width: 100%;
