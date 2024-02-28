@@ -41,8 +41,8 @@
                     </img>
                     <a class="glide__slide-button" href="{{ collection.url }}">
                         Explore Collection
-                            <i class="fa-solid fa-arrow-right walkin-pets__button-arrow"></i>
-                        </a>
+                        <i class="fa-solid fa-arrow-right walkin-pets__button-arrow"></i>
+                    </a>
                 </div>
                 <div class="glide__collection-header">
                     <h3 class="glide__title">{{ collection.title }}</h3>
@@ -56,18 +56,24 @@
           {% for product in products %}
             <li class="glide__slide">
               <a href="{{ product.url }}">
-                <img
-                  class="glide__slide-image"
-                  src="{{ product.featured_image | img_url: 'master' }}"
-                  alt="Collection featured image"
-                >
-                    <ul class="glide__variant-container">
-                        <li class="glide__varient-color glide__varient-1"><i class="fa-solid fa-check"></i></li>
-                        <li class="glide__varient-color glide__varient-2"></li>
-                        <li class="glide__varient-color glide__varient-3"></li>
-                        <li class="glide__varient-color glide__varient-4"></li>
-                    </ul>
-            </img>
+                <div class="glide__image-container">
+                    <img
+                      class="glide__slide-image"
+                      src="{{ product.featured_image | img_url: 'master' }}"
+                      alt="Collection featured image"
+                    >
+                        <ul class="glide__variant-container">
+                            <li class="glide__varient-color glide__varient-1"><i class="fa-solid fa-check"></i></li>
+                            <li class="glide__varient-color glide__varient-2"></li>
+                            <li class="glide__varient-color glide__varient-3"></li>
+                            <li class="glide__varient-color glide__varient-4"></li>
+                        </ul>
+                    </img>
+                    <a class="glide__slide-button" href="{{ product.url }}">
+                        Explore Product
+                        <i class="fa-solid fa-arrow-right walkin-pets__button-arrow"></i>
+                    </a>
+                </div>
                 <div class="glide__product-header">
                     <h3 class="glide__title">{{ product.title }}</h3>
                     <span class="glide__price">£{{ product.price | money_without_currency }}</span>
