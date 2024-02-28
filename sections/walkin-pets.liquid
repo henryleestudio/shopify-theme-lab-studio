@@ -1,9 +1,12 @@
 {% assign ss = section.settings %}
+{%- assign collections = collections[section.settings.collectionList] -%}
+{% assign products = section.settings.productList %}
+{% comment %} {%- assign product_limit = section.settings.product_count -%} {% endcomment %}
 
 <section
   id="{{ss.sectionId}}"
   class="walkin-pets"
-  style="padding: {{ ss.paddingTop }}px 3% {{ ss.paddingBottom }}px 3%;"
+  style="padding: {{ ss.paddingTop }}px 4% {{ ss.paddingBottom }}px 4%;"
 >
   {% if ss.title != blank %}
     <h{{ ss.heading_tag }} class="walkin-pets__title h{{ ss.title_size }}">
@@ -28,11 +31,29 @@
     <div class="glide">
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
-          <li class="glide__slide"><img src="../assets/walkin-pets-img-1.jpg" alt=""></li>
-          <li class="glide__slide">1</li>
-          <li class="glide__slide">2</li>
-          <li class="glide__slide">3</li>
-          <li class="glide__slide">4</li>
+          {% for collection in collections %}
+            <li class="glide__slide">
+              <a href="{{ collection.url  }}">
+                <img src="{{ collection.featured_image | img_url: 'master' }}" alt="Collection featured image">
+                <h3>{{ collection.title }}</h3>
+                <span>({{ collection.all_products_count }})</span>
+              </a>
+            </li>
+          {% endfor %}
+
+          {% for product in products %}
+            <li class="glide__slide">
+              <a href="{{ product.url }}">
+                <img
+                  class="glide-product-image"
+                  src="{{ product.featured_image | img_url: 'master' }}"
+                  alt="Collection featured image"
+                >
+                <h3>{{ product.title }}</h3>
+                <p>{{ product.price | money }}</p>
+              </a>
+            </li>
+          {% endfor %}
         </ul>
       </div>
 
@@ -127,6 +148,18 @@
       "id": "buttonHoverColor",
       "label": "Button hover color",
       "default": "#6662DC"
+    },
+    {
+      "type": "collection_list",
+      "id": "collectionList",
+      "label": "Collections",
+      "limit": 8
+    },
+    {
+      "type": "product_list",
+      "id": "productList",
+      "label": "Products",
+      "limit": 12
     },
     {
       "type": "range",

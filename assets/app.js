@@ -15,14 +15,10 @@ var config = {
   type: 'carousel',
   startAt: 0,
   perView: 4,
-  autoplay: 2000,
+  // autoplay: 2000,
   hoverpause: true
 };
 new _glidejs_glide__WEBPACK_IMPORTED_MODULE_0__["default"]('.glide', config).mount();
-
-// document.querySelector('.glide__arrow--right').addEventListener('click', function () {
-//     console.log('hello');
-//   });
 
 /***/ }),
 
