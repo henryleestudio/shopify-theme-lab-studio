@@ -1,7 +1,6 @@
 {% assign ss = section.settings %}
 {% assign collections = ss.collectionList %}
 {% assign products = ss.productList %}
-{% comment %} {%- assign product_limit = section.settings.product_count -%} {% endcomment %}
 
 <section
   id="{{ss.sectionId}}"
@@ -34,13 +33,21 @@
           {% for collection in collections %}
             <li class="glide__slide">
               <a href="{{ collection.url }}">
-                <img
-                  class="glide__slide-image"
-                  src="{{ collection.featured_image | img_url: 'master' }}"
-                  alt="Collection featured image"
-                />
-                <h3 class="glide__title">{{ collection.title }}</h3>
-                <span class="glide__price">({{ collection.all_products_count }})</span>
+                <div class="glide__image-container">
+                    <img
+                      class="glide__slide-image"
+                      src="{{ collection.featured_image | img_url: 'master' }}"
+                      alt="Collection featured image">
+                    </img>
+                    <a class="glide__slide-button" href="{{ collection.url }}">
+                        Explore Collection
+                            <i class="fa-solid fa-arrow-right walkin-pets__button-arrow"></i>
+                        </a>
+                </div>
+                <div class="glide__collection-header">
+                    <h3 class="glide__title">{{ collection.title }}</h3>
+                    <span class="glide__price">({{ collection.all_products_count }})</span>
+                </div>
                 <a class="glide__collection-link" href="{{ collection.url }}">View collection</a>
               </a>
             </li>
@@ -61,8 +68,10 @@
                         <li class="glide__varient-color glide__varient-4"></li>
                     </ul>
             </img>
-                <h3 class="glide__title">{{ product.title }}</h3>
-                <span class="glide__price">£{{ product.price | money_without_currency }}</span>
+                <div class="glide__product-header">
+                    <h3 class="glide__title">{{ product.title }}</h3>
+                    <span class="glide__price">£{{ product.price | money_without_currency }}</span>
+                </div>
                 <p class="glide__product-description">{{ product.description }}</p>
               </a>
             </li>

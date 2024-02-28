@@ -1,11 +1,5 @@
 @import "variables";
 
-$primary-color-1: #111111;
-$primary-color-2: #7A7979;
-$primary-contrasting: #6662DC;
-$secondary-color-1: #B15552;
-$secondary-color-2: #ffffff;
-
 .walkin-pets {
     &__title {
         font-size: $titleSize;
@@ -40,9 +34,6 @@ $secondary-color-2: #ffffff;
     &__button.mobile {
         display: none;
     }
-    &__slide-container {
-        
-    }
     @media only screen and (max-width: 768px) {
         &__button {
             display: none;
@@ -57,20 +48,12 @@ $secondary-color-2: #ffffff;
     }
 }
 
-$titleSize: 26px;
-$paragraphSize: 12px;
-$buttonTxtSize: 12.5px;
-
 .glide {
     position: relative;
     width: 100%;
     box-sizing: border-box;
     position: relative;
 
-    &__slides {
-        // justify-content: space-evenly;
-        // gap: 10px;
-    }
     &__slide {
         width: 50px;
         a {
@@ -78,16 +61,57 @@ $buttonTxtSize: 12.5px;
         }
     }
     &__slide-image {
-        width: 97%;
+        width: 100%;
         border-radius: 10px;
+        float: left;
+    }
+    &__slide-button {
+        font-size: $buttonTxtSize;
+        text-align: center;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        background: $primary-color-1;
+        color: $secondary-color-2;
+        padding: 5.25px 18px;
+        width: 87%;
+        height: 36px;
+        float: left;
+        margin-top: -50px;
+        display: none;
+    }
+    &__image-container {
+        display: grid;
+        justify-items: center;
+        width: 97%;
+    }
+    &__image-container:hover a, .glide__slide-button:hover {
+        display: block;
+        z-index: 10;
+        opacity: 1;
+        .glide__slide-image {
+            opacity: .5;
+        }
+    }
+    
+    &__product-header, &__collection-header {
+        display: flex;
+        width: 97%;
+        justify-content: space-between;
+        align-items: center;
     }
     &__title {
+        font-size: $paragraphSize;
+        font-weight: 600;
         color: $primary-color-1;
     }
     &__price {
+        font-size: $paragraphSize;
+        font-weight: 600;
         color: $primary-color-1;
     }
     &__collection-link {
+        font-size: $paragraphSize;
         color: $primary-color-1;
         text-decoration: underline !important;
     }
