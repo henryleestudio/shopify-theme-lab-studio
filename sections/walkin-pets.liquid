@@ -1,5 +1,5 @@
 {% assign ss = section.settings %}
-{%- assign collections = collections[section.settings.collectionList] -%}
+{%- assign collections = section.settings.collectionList -%}
 {% assign products = section.settings.productList %}
 {% comment %} {%- assign product_limit = section.settings.product_count -%} {% endcomment %}
 
@@ -37,6 +37,7 @@
                 <img src="{{ collection.featured_image | img_url: 'master' }}" alt="Collection featured image">
                 <h3>{{ collection.title }}</h3>
                 <span>({{ collection.all_products_count }})</span>
+                <a href="{{ collection.url }}">View collection</a>
               </a>
             </li>
           {% endfor %}
@@ -50,7 +51,8 @@
                   alt="Collection featured image"
                 >
                 <h3>{{ product.title }}</h3>
-                <p>{{ product.price | money }}</p>
+                <span>{{ product.price | money }}</span>
+                <p>{{ product.description }}</p>
               </a>
             </li>
           {% endfor %}
