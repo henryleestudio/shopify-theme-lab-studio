@@ -51,7 +51,7 @@
                   alt="Collection featured image"
                 >
                 <h3>{{ product.title }}</h3>
-                <span>{{ product.price | money }}</span>
+                <span>£{{ product.price | money_without_currency }}</span>
                 <p>{{ product.description }}</p>
               </a>
             </li>
