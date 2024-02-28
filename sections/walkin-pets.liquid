@@ -1,124 +1,158 @@
 {% assign ss = section.settings %}
 
-<section id="{{ss.sectionId}}" class="walkin-pets" style="padding: {{ ss.paddingTop }}px 3% {{ ss.paddingBottom }}px 3%;">
-    {% if ss.title != blank %}     
-        <h{{ ss.heading_tag }} class="walkin-pets__title h{{ ss.title_size }}">{{- ss.title | newline_to_br -}}</h{{ ss.heading_tag }}>
+<section
+  id="{{ss.sectionId}}"
+  class="walkin-pets"
+  style="padding: {{ ss.paddingTop }}px 3% {{ ss.paddingBottom }}px 3%;"
+>
+  {% if ss.title != blank %}
+    <h{{ ss.heading_tag }} class="walkin-pets__title h{{ ss.title_size }}">
+      {{- ss.title | newline_to_br -}}
+    </h{{ ss.heading_tag }}>
+  {% endif %}
+
+  <div class="walkin-pets__overviewSection">
+    {% if ss.overview != blank %}
+      <p class="walkin-pets__overview">{{ ss.overview }}</p>
     {% endif %}
 
-    <div class="walkin-pets__overviewSection">
-        {% if ss.overview != blank %}
-            <p class="walkin-pets__overview">{{ ss.overview }}</p>
-        {% endif %}
+    {% if ss.buttonText != blank %}
+      <a class="walkin-pets__button" href="{{ ss.buttonLink }}">
+        {{- ss.buttonText -}}
+        <i class="fa-solid fa-arrow-right walkin-pets__button-arrow"></i
+      ></a>
+    {% endif %}
+  </div>
 
-        {% if ss.buttonText != blank %}
-            <a class="walkin-pets__button" href="{{ ss.buttonLink }}">{{ ss.buttonText }}<i class="fa-solid fa-arrow-right walkin-pets__button-arrow"></i></a>
-        {% endif %}
+  <div class="walkin-pets__slide-container">
+    <div class="glide">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          <li class="glide__slide"><img src="../assets/walkin-pets-img-1.jpg" alt=""></li>
+          <li class="glide__slide">1</li>
+          <li class="glide__slide">2</li>
+          <li class="glide__slide">3</li>
+          <li class="glide__slide">4</li>
+        </ul>
+      </div>
+
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
     </div>
+  </div>
 
-    <a class="walkin-pets__button mobile" href="{{ ss.buttonLink }}">{{ ss.buttonText }}<i class="fa-solid fa-arrow-right walkin-pets__button-arrow"></i></a>
+  <a class="walkin-pets__button mobile" href="{{ ss.buttonLink }}">
+    {{- ss.buttonText -}}
+    <i class="fa-solid fa-arrow-right walkin-pets__button-arrow"></i
+  ></a>
 </section>
 
 {% style %}
-    .walkin-pets__button {
-        background: {{ ss.buttonColor }};
-        color: {{ ss.buttonTextColor }};
-    }
-    .walkin-pets__button:hover {
-        background: {{ ss.buttonHoverColor }} !important;
-    }
+  .walkin-pets__button {
+      background: {{ ss.buttonColor }};
+      color: {{ ss.buttonTextColor }};
+  }
+  .walkin-pets__button:hover {
+      background: {{ ss.buttonHoverColor }} !important;
+  }
 {% endstyle %}
-
 
 {% schema %}
 {
-    "name": "Walkin' Pets",
-    "settings": [
-        {
-            "type": "inline_richtext",
-            "id": "title",
-            "label": "Title", 
-            "default": "This is a section title..."
-        },
-        {
-            "type": "range",
-            "id": "title_size",
-            "min": 1,
-            "max": 6,
-            "step": 1,
-            "label": "Title heading size",
-            "info": "Title size, refers to the hierarchy and visual importance of headings on a webpage, emphasizing the primary topic.",
-            "default": 6
-        },
-        {
-            "type": "range",
-            "id": "heading_tag",
-            "min": 1,
-            "max": 6,
-            "step": 1,
-            "label": "Title heading tag",
-            "info": "Header tags, also known as heading tags, are used to seperate headings and subheadings on a webpage. They rank in order of importance, from H1 to H6, with H1s usually being the title. Header tags improve the readability and SEO of a webpage.",
-            "default": 6
-        },
-        {
-            "type": "inline_richtext",
-            "id": "overview",
-            "label": "Overview",
-            "default": "Section overview. Lorem ipsum dolor sit amet. Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        },
-        {
-            "type": "text",
-            "id": "buttonText",
-            "label": "Button text",
-            "default": "Explore all ranges"
-        },
-        {
-            "type": "url",
-            "id": "buttonLink",
-            "label": "Button link"
-        },
-        {
-            "type": "color",
-            "id": "buttonTextColor",
-            "label": "Button Text color",
-            "default": "#ffffff"
-        },
-        {
-            "type": "color",
-            "id": "buttonColor",
-            "label": "Button color",
-            "default": "#111111"
-        },
-        {
-            "type": "color",
-            "id": "buttonHoverColor",
-            "label": "Button hover color",
-            "default": "#6662DC"
-        },
-        {
-            "type": "range",
-            "id": "paddingTop",
-            "min": 0,
-            "max": 50,
-            "step": 5,
-            "label": "Padding Top",
-            "default": 25
-        }, 
-        {
-            "type": "range",
-            "id": "paddingBottom",
-            "min": 0,
-            "max": 50,
-            "step": 5,
-            "label": "Padding Bottom",
-            "default": 25
-        }
-        ],
-    "presets": [
-        {
-            "name": "Walkin' Pets"
-        }
-    ], 
-    "tag": "section",
-    "class": "walkin-pets-section"
+  "name": "Walkin' Pets",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "This is a section title..."
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "label": "Title heading size",
+      "info": "Title size, refers to the hierarchy and visual importance of headings on a webpage, emphasizing the primary topic.",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "heading_tag",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "label": "Title heading tag",
+      "info": "Header tags, also known as heading tags, are used to seperate headings and subheadings on a webpage. They rank in order of importance, from H1 to H6, with H1s usually being the title. Header tags improve the readability and SEO of a webpage.",
+      "default": 6
+    },
+    {
+      "type": "inline_richtext",
+      "id": "overview",
+      "label": "Overview",
+      "default": "Section overview. Lorem ipsum dolor sit amet. Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "type": "text",
+      "id": "buttonText",
+      "label": "Button text",
+      "default": "Explore all ranges"
+    },
+    {
+      "type": "url",
+      "id": "buttonLink",
+      "label": "Button link"
+    },
+    {
+      "type": "color",
+      "id": "buttonTextColor",
+      "label": "Button Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "buttonColor",
+      "label": "Button color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "buttonHoverColor",
+      "label": "Button hover color",
+      "default": "#6662DC"
+    },
+    {
+      "type": "range",
+      "id": "paddingTop",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "label": "Padding Top",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "paddingBottom",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "label": "Padding Bottom",
+      "default": 25
+    }
+  ],
+  "presets": [
+    {
+      "name": "Walkin' Pets"
+    }
+  ],
+  "tag": "section",
+  "class": "walkin-pets-section"
 }
 {% endschema %}

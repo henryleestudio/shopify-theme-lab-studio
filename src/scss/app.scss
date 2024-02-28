@@ -1,6 +1,4 @@
-$titleSize: 26px;
-$paragraphSize: 12px;
-$buttonTxtSize: 12.5px;
+@import "variables";
 
 .walkin-pets {
     &__title {
@@ -36,6 +34,9 @@ $buttonTxtSize: 12.5px;
     &__button.mobile {
         display: none;
     }
+    &__slide-container {
+        
+    }
     @media only screen and (max-width: 768px) {
         &__button {
             display: none;
@@ -47,5 +48,53 @@ $buttonTxtSize: 12.5px;
             text-align: center;
             display: block;
         }
+    }
+}
+
+.glide {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+
+    &__track {
+        width: 100%;
+        overflow: hidden;
+    }
+    &__arrows {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        top: 50%;
+    }
+    &__arrow {
+        font-size: 22px;
+        display: block;
+        top: 50%;
+        z-index: 2;
+        color: #111111;
+        text-transform: uppercase;
+        padding: 9px 12px;
+        background-color: white;
+        height: 50px;
+        width: 50px;
+        border: none;
+        border-radius: 50%;
+        box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.1);
+        // text-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: opacity 150ms ease, border 300ms ease-in-out;
+        transform: translateY(-50%);
+        line-height: 1;
+    }
+    &__arrow-right {
+        right: 2em;
+        opacity: 1;
+    }
+    &__arrow--left {
+        left: 2em;
+        opacity: .3;
     }
 }
