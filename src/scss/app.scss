@@ -68,6 +68,23 @@
         position: relative;
         width: 97%;
     }
+    &__flag {
+        font-size: $buttonTxtSize;
+        position: absolute;
+        top: 13px;
+        left: 14px;
+        border-radius: 4px;
+        padding: 4px 9px;
+        z-index: 100;
+    }
+    &__flag.red {
+        color: $secondary-color-2;
+        background-color: $secondary-color-1;
+    }
+    &__flag.white {
+        color: $primary-color-1;
+        background-color: $secondary-color-2;
+    }
     &__slide-button {
         font-size: $buttonTxtSize;
         text-align: center;

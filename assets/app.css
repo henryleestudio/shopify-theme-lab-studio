@@ -129,6 +129,23 @@
   position: relative;
   width: 97%;
 }
+.glide__flag {
+  font-size: 12.5px;
+  position: absolute;
+  top: 13px;
+  left: 14px;
+  border-radius: 4px;
+  padding: 4px 9px;
+  z-index: 100;
+}
+.glide__flag.red {
+  color: #ffffff;
+  background-color: #B15552;
+}
+.glide__flag.white {
+  color: #111111;
+  background-color: #ffffff;
+}
 .glide__slide-button {
   font-size: 12.5px;
   text-align: center;
