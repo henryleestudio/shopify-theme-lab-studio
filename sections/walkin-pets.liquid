@@ -70,13 +70,20 @@
                     ></img>
                     <div class="glide__variants">
                         <ul class="glide__variant-container">
-                            {% for variant in product.variants %}
-                              <li onclick="swapImg()" class="glide__varient-color glide__varient-2"><img
-                              class="glide__slide-image"
-                              src="{{ variant.featured_media.alt.color | img_url: 'master' }}"
-                              alt="Collection featured image"
-                            /></li>
+                            {% for variant in product.variants %} 
+                              <li onclick="swapImg(el)" class="glide__varient-color glide__varient-2">
+                                {% comment %} <i class="fa-solid fa-check"></i> {% endcomment %}
+                                {% comment %} {{ variant.options.color }} {% endcomment %}
+                            </li>
                             {% endfor %}
+                            
+                            {% comment %}                             
+                            {% for option in product.options_with_values %} 
+                              <li class="glide__varient-color glide__varient-2">
+                                {{ option.values. }}
+                                {% comment %} <i class="fa-solid fa-check"></i> {% endcomment %}
+                            </li>
+                            {% endfor %} {% endcomment %}
                         </ul>
                     </div>
 
@@ -114,19 +121,28 @@
 
 <script>
     const variant = document.querySelectorAll('.glide__varient-color')
-    let checked = `<i class="fa-solid fa-check"></i>`
-    
-    variant.forEach(element => { element.addEventListener('click', () => { element.innerHTML = checked})
-    })
+    // let checked = `<i class="fa-solid fa-check"></i>`
 
-    function swapImg(){
-        fetch(window.Shopify.routes.root + `products/${cat}.js`)
-        .then(response => response.json())
-        .then(product => alert('The title of this product is ' + product.title));
+    function checkItem(el) {   
+            if (el.classList.contains('uncheck')) {
+                el.classList.add("check");
+                el.classList.remove("uncheck");
+            }
 
-        variant.forEach(element => { element.addEventListener('click', () => { console.log(element.parentElement.parentElement.parentElement.firstElementChild.src = 'product.')})
-        })     
-    }
+            variant.forEach(element => { element.addEventListener('click', (e) => { checkItem(e.target) })})
+        }
+        // document.querySelector('#list').addEventListener('click', (e) => {
+        //     checkItem(e.target);
+        // });
+
+    // function swapImg(){
+    //     fetch(window.Shopify.routes.root + `products/${cat}.js`)
+    //     .then(response => response.json())
+    //     .then(product => alert('The title of this product is ' + product.title));
+
+    //     variant.forEach(element => { element.addEventListener('click', () => { console.log(element.parentElement.parentElement.parentElement.firstElementChild.src = 'product.')})
+    //     })     
+    // }
 </script>
 
 {% style %}
