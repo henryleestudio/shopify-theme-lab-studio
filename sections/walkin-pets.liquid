@@ -55,20 +55,22 @@
 
           {% for product in products %}
             <li class="glide__slide">
-              <a href="{{ product.url }}">
+
                 <div class="glide__image-container">
                     <img
                       class="glide__slide-image"
                       src="{{ product.featured_image | img_url: 'master' }}"
                       alt="Collection featured image"
-                    >
+                    />
+                    <div class="glide__variants">
                         <ul class="glide__variant-container">
-                            <li class="glide__varient-color glide__varient-1"><i class="fa-solid fa-check"></i></li>
-                            <li onclick="varantSwap()" class="glide__varient-color glide__varient-2"></li>
+                            <li class="glide__varient-color glide__varient-1">{{ product.variants.first }}</li>
+                            <li class="glide__varient-color glide__varient-2"></li>
                             <li class="glide__varient-color glide__varient-3"></li>
                             <li class="glide__varient-color glide__varient-4"></li>
                         </ul>
-                    </img>
+                    </div>
+
                     <a class="glide__slide-button" href="{{ product.url }}">
                         Explore Product
                         <i class="fa-solid fa-arrow-right walkin-pets__button-arrow"></i>
@@ -79,7 +81,6 @@
                     <span class="glide__price">£{{ product.price | money_without_currency }}</span>
                 </div>
                 <p class="glide__product-description">{{ product.description }}</p>
-              </a>
             </li>
           {% endfor %}
         </ul>
@@ -102,11 +103,16 @@
   ></a>
 </section>
 
-<script>
-    const = varantSwap () => {
-        console.log('hello')
-    }
-</script>
+{%  javascript  %}     
+    const variant = document.querySelectorAll('.glide__varient-color')
+    let checked = `<i class="fa-solid fa-check"></i>`
+    
+    variant.forEach(element => { element.addEventListener('click', () => { element.innerHTML = checked})
+    })
+
+    variant.forEach(element => { element.addEventListener('click', () => { console.log(element.parentElement.parentElement.parentElement.firstElementChild.src = '{{ product.variants.first }}')})
+    }) 
+{% endjavascript %} 
 
 {% style %}
   .walkin-pets__button {

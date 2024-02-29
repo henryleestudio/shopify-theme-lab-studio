@@ -64,6 +64,10 @@
         width: 100%;
         border-radius: 10px;
     }
+    &__image-container {
+        position: relative;
+        width: 97%;
+    }
     &__slide-button {
         font-size: $buttonTxtSize;
         text-align: center;
@@ -76,23 +80,56 @@
         width: 87%;
         height: 36px;
         margin-top: -65px;
+        margin-left: 19px;
         display: none;
     }
-    &__image-container {
-        display: grid;
-        justify-items: center;
-        width: 97%;
-    }
-    &__image-container:hover a, .glide__slide-button:hover {
+    &__image-container:hover &__slide-button {
         display: block;
+        position: absolute;
         z-index: 10;
         opacity: 1;
+    }
+    &__image-container:hover {
         .glide__slide-image {
             opacity: .5;
         }
-        .glide__varient-color {
-            top: -100px;
-        }
+    }
+    &__image-container:hover .glide__variants {
+        margin-top: -100px;
+    }
+    &__variants {
+        float: left;
+        margin-top: -50px;
+        margin-left: -13px;
+    }
+    &__variant-container {
+        position: relative;
+        display: flex;
+        gap: 3px;
+    }
+    &__varient-color {
+        color: white;
+        width: 19px;
+        height: 19px;
+        border-radius: 3px;
+        list-style: none;
+        top: -44px;
+        left: -23px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__varient-1 {
+        background: #BABABA;
+    }
+    &__varient-2 {
+        background: #C57573;
+    }
+    &__varient-3 {
+        background: #7694B7;
+    }
+    &__varient-4 {
+        background: #9BB65A;
     }
     &__product-header, &__collection-header {
         display: flex;
@@ -118,36 +155,6 @@
     &__product-description {
         color: $primary-color-2;
         font-size: $paragraphSize;
-    }
-    &__variant-container {
-        position: absolute;
-        display: flex;
-        gap: 3px;
-    }
-    &__varient-color {
-        color: white;
-        width: 19px;
-        height: 19px;
-        border-radius: 3px;
-        position: relative;
-        list-style: none;
-        top: -44px;
-        left: -23px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    &__varient-1 {
-        background: #BABABA;
-    }
-    &__varient-2 {
-        background: #C57573;
-    }
-    &__varient-3 {
-        background: #7694B7;
-    }
-    &__varient-4 {
-        background: #9BB65A;
     }
     &__track {
         width: 100%;

@@ -125,6 +125,10 @@
   width: 100%;
   border-radius: 10px;
 }
+.glide__image-container {
+  position: relative;
+  width: 97%;
+}
 .glide__slide-button {
   font-size: 12.5px;
   text-align: center;
@@ -137,23 +141,54 @@
   width: 87%;
   height: 36px;
   margin-top: -65px;
+  margin-left: 19px;
   display: none;
 }
-.glide__image-container {
-  display: grid;
-  justify-items: center;
-  width: 97%;
-}
-.glide__image-container:hover a, .glide .glide__slide-button:hover {
+.glide__image-container:hover .glide__slide-button {
   display: block;
+  position: absolute;
   z-index: 10;
   opacity: 1;
 }
-.glide__image-container:hover a .glide__slide-image, .glide .glide__slide-button:hover .glide__slide-image {
+.glide__image-container:hover .glide__slide-image {
   opacity: 0.5;
 }
-.glide__image-container:hover a .glide__varient-color, .glide .glide__slide-button:hover .glide__varient-color {
-  top: -100px;
+.glide__image-container:hover .glide__variants {
+  margin-top: -100px;
+}
+.glide__variants {
+  float: left;
+  margin-top: -50px;
+  margin-left: -13px;
+}
+.glide__variant-container {
+  position: relative;
+  display: flex;
+  gap: 3px;
+}
+.glide__varient-color {
+  color: white;
+  width: 19px;
+  height: 19px;
+  border-radius: 3px;
+  list-style: none;
+  top: -44px;
+  left: -23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.glide__varient-1 {
+  background: #BABABA;
+}
+.glide__varient-2 {
+  background: #C57573;
+}
+.glide__varient-3 {
+  background: #7694B7;
+}
+.glide__varient-4 {
+  background: #9BB65A;
 }
 .glide__product-header, .glide__collection-header {
   display: flex;
@@ -179,36 +214,6 @@
 .glide__product-description {
   color: #7A7979;
   font-size: 12px;
-}
-.glide__variant-container {
-  position: absolute;
-  display: flex;
-  gap: 3px;
-}
-.glide__varient-color {
-  color: white;
-  width: 19px;
-  height: 19px;
-  border-radius: 3px;
-  position: relative;
-  list-style: none;
-  top: -44px;
-  left: -23px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.glide__varient-1 {
-  background: #BABABA;
-}
-.glide__varient-2 {
-  background: #C57573;
-}
-.glide__varient-3 {
-  background: #7694B7;
-}
-.glide__varient-4 {
-  background: #9BB65A;
 }
 .glide__track {
   width: 100%;
