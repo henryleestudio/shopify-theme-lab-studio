@@ -71,7 +71,7 @@
                     <div class="glide__variants">
                         <ul class="glide__variant-container">
                             {% for variant in product.variants %} 
-                              <li onclick="swapImg(this)" class="glide__varient-color glide__varient-2" data-img="{{ variant.featured_image.src | image_url:width:800 }}" style="background-color:{{ variant.options.color }}"></li>
+                              <li onclick="swapImg(this)" class="glide__varient-color glide__varient-2" data-img="{{ variant.featured_image.src | image_url:width:800 }}" style="background-color:{{ variant.option1.color }}"></li>
                               {% comment %}
                               <li onclick="swapImg(el)" class="glide__varient-color glide__varient-2">
                                 <i class="fa-solid fa-check"></i>
