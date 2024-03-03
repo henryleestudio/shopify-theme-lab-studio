@@ -147,6 +147,8 @@
     // }
     function swapImg(element){
       var get_img = element.getAttribute('data-img');
+      element.closest('.glide__variant-container').querySelector('.active').classList.remove('active');
+      element.classList.add('active');
       element.closest('.glide__image-container').querySelector('.glide__slide-image').setAttribute('src',get_img);
     }
     
