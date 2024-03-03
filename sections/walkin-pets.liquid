@@ -71,10 +71,12 @@
                     <div class="glide__variants">
                         <ul class="glide__variant-container">
                             {% for variant in product.variants %} 
+                              <li onclick="swapImg(this)" class="glide__varient-color glide__varient-2" data-img="{{ variant.featured_image.src | image_url:width:800 }}" style="background-color:{{ variant.options.color }}"></li>
+                              {% comment %}
                               <li onclick="swapImg(el)" class="glide__varient-color glide__varient-2">
-                                {% comment %} <i class="fa-solid fa-check"></i> {% endcomment %}
-                                {% comment %} {{ variant.options.color }} {% endcomment %}
-                            </li>
+                                <i class="fa-solid fa-check"></i>
+                                {{ variant.options.color }}
+                            </li>{% endcomment %}
                             {% endfor %}
                             
                             {% comment %}                             
@@ -143,6 +145,8 @@
     //     variant.forEach(element => { element.addEventListener('click', () => { console.log(element.parentElement.parentElement.parentElement.firstElementChild.src = 'product.')})
     //     })     
     // }
+
+    
 </script>
 
 {% style %}
