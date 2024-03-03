@@ -197,6 +197,17 @@
   cursor:pointer;
   position:relative;
 }
+.glide__varient-color.active:after{
+  content: '';
+  background-color: transparent;
+  transform: translateY(-60%) rotate(45deg);
+  top: 50%;
+  height: 10px;
+  width: 6px;
+  border-bottom: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+  position: absolute;
+}
 .glide__varient-1 {
   background: #BABABA;
 }
