@@ -189,12 +189,13 @@
   height: 19px;
   border-radius: 3px;
   list-style: none;
-  top: -44px;
-  left: -23px;
+  /* top: -44px;
+  left: -23px; */
   display: flex;
   justify-content: center;
   align-items: center;
   cursor:pointer;
+  position:relative;
 }
 .glide__varient-1 {
   background: #BABABA;
