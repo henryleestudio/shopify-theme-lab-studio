@@ -145,7 +145,10 @@
     //     variant.forEach(element => { element.addEventListener('click', () => { console.log(element.parentElement.parentElement.parentElement.firstElementChild.src = 'product.')})
     //     })     
     // }
-
+    function swapImg(element){
+      var get_img = element.getAttribute('data-img');
+      element.closest('.glide__image-container').querySelector('.glide__slide-image').setAttribute('src',get_img);
+    }
     
 </script>
 
