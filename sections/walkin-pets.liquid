@@ -71,21 +71,8 @@
                     <div class="glide__variants">
                         <ul class="glide__variant-container">
                             {% for variant in product.variants %} 
-                              <li onclick="swapImg(this)" class="glide__varient-color glide__varient-2 {% if forloop.first %}active{% endif %}" data-img="{{ variant.featured_image.src | image_url:width:800 }}" style="background-color:{{ variant.title }}"></li>
-                              {% comment %}
-                              <li onclick="swapImg(el)" class="glide__varient-color glide__varient-2">
-                                <i class="fa-solid fa-check"></i>
-                                {{ variant.options.color }}
-                            </li>{% endcomment %}
+                              <li onclick="swapImg(this)" class="glide__varient-color {% if forloop.first %}active{% endif %}" data-img="{{ variant.featured_image.src | image_url:width:800 }}" style="background-color:{{ variant.title }}"></li>
                             {% endfor %}
-                            
-                            {% comment %}                             
-                            {% for option in product.options_with_values %} 
-                              <li class="glide__varient-color glide__varient-2">
-                                {{ option.values. }}
-                                {% comment %} <i class="fa-solid fa-check"></i> {% endcomment %}
-                            </li>
-                            {% endfor %} {% endcomment %}
                         </ul>
                     </div>
 
@@ -121,37 +108,13 @@
   ></a>
 </section>
 
-<script>
-    const variant = document.querySelectorAll('.glide__varient-color')
-    // let checked = `<i class="fa-solid fa-check"></i>`
-
-    function checkItem(el) {   
-            if (el.classList.contains('uncheck')) {
-                el.classList.add("check");
-                el.classList.remove("uncheck");
-            }
-
-            variant.forEach(element => { element.addEventListener('click', (e) => { checkItem(e.target) })})
-        }
-        // document.querySelector('#list').addEventListener('click', (e) => {
-        //     checkItem(e.target);
-        // });
-
-    // function swapImg(){
-    //     fetch(window.Shopify.routes.root + `products/${cat}.js`)
-    //     .then(response => response.json())
-    //     .then(product => alert('The title of this product is ' + product.title));
-
-    //     variant.forEach(element => { element.addEventListener('click', () => { console.log(element.parentElement.parentElement.parentElement.firstElementChild.src = 'product.')})
-    //     })     
-    // }
-    function swapImg(element){
-      var get_img = element.getAttribute('data-img');
-      element.closest('.glide__variant-container').querySelector('.active').classList.remove('active');
-      element.classList.add('active');
-      element.closest('.glide__image-container').querySelector('.glide__slide-image').setAttribute('src',get_img);
+<script>  
+    function swapImg(el){
+      const getImg = el.getAttribute('data-img');
+      el.closest('.glide__variant-container').querySelector('.active').classList.remove('active');
+      el.classList.add('active');
+      el.closest('.glide__image-container').querySelector('.glide__slide-image').setAttribute('src',getImg);
     }
-    
 </script>
 
 {% style %}
