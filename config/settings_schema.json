@@ -1,21 +1,25 @@
 [
   {
-    "name": "Color Swatches by WebSensePro",
+    "name": "theme_info",
+    "theme_name": "Dawn",
+    "theme_version": "13.0.0",
+    "theme_author": "Shopify",
+    "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes",
+    "theme_support_url": "https:\/\/support.shopify.com\/"
+  },
+  {
+    "name": "Color swatches",
     "settings": [
-      {
-        "type": "paragraph",
-        "content": "Support WebSensePro by [Subscribing our Channel](https:\/\/youtube.com\/@websensepro?sub_confirmation=1)"
-      },      
       {
         "type": "text",
         "id": "optionName",
         "label": "Swatch option name",
         "default": "Color",
-        "info": "Make sure capitalization is same as variant for e.g Color not color "
+        "info": "Exact match is required, including capitalization."
       },
       {
         "type": "paragraph",
-        "content": "If your store is in different languages, type in all the different words and separate them with commas. For example: Color, Colour, Couleur"
+        "content": "If you have a multilingual store, please enter multiple options separated with commas. Example: Color,Colour,Fabre,Couleur"
       },
       {
         "type": "select",
@@ -38,8 +42,12 @@
         "id": "swatchColors",
         "label": "Colors",
         "placeholder": "Red:#ff0000\nGreen:#00ff00\nBlue:#0000ff",
-        "default": "Black:#000000\nWhite:#f5f5f5\nBlue:#005eff\nRed:#c9002c\nPink:#ffd5e6\nBrown:#a2896b\nOlive:#808000\nGreenRed:#008000#c9002c\nGreenRedBlue:#008000#c9002c#005eff",
-        "info": "One rule per line. Example: Blue:#005eff\n2 Color Swatch Example: GreenRed:#008000#c9002c\n3 Color Swatch Example: GreenRedBlue:#008000#c9002c#005eff"
+        "default": "Black:#000000\nWhite:#f5f5f5\nBlue:#005eff\nRed:#c9002c\nPink:#ffd5e6\nBrown:#a2896b\nOlive:#808000\nPurple:#dac6ef\nGrey:#e2e2e7\nBeige:#d8c7af",
+        "info": "One rule per line. Example: Blue:#005eff"
+      },
+      {
+        "type": "paragraph",
+        "content": "You have the option to add 2 or 3 colors for a single swatch. Example: Red&Blue: #c9002c#005eff"
       },
       {
         "type": "paragraph",
@@ -79,16 +87,15 @@
         "unit": "px",
         "label": "Swatch size",
         "default": 40
+      },
+      {
+        "type": "checkbox",
+        "id": "dark",
+        "label": "For dark backgrounds",
+        "default": false,
+        "info":"Alternate appearance for dark backgrounds."
       }
     ]
-  },
-  {
-    "name": "theme_info",
-    "theme_name": "Dawn",
-    "theme_version": "13.0.0",
-    "theme_author": "Shopify",
-    "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes",
-    "theme_support_url": "https:\/\/support.shopify.com\/"
   },
   {
     "name": "t:settings_schema.logo.name",
